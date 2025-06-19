@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pardon mon amour ❤</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+    }.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent url('https://raw.githubusercontent.com/kristofferandreasen/particles.js/main/images/star.svg') repeat;
+  animation: moveStars 100s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes moveStars {
+  0% { background-position: 0 0; }
+  100% { background-position: 10000px 5000px; }
+}
+
+.container {
+  z-index: 1;
+  text-align: center;
+}
+
+#message {
+  margin-top: 30px;
+  font-size: 1.4em;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 90%;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#message.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+button {
+  background-color: #ff69b4;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff69b4;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="container">
+    <h1>🌟 Clique ici, ma petite coulombe 🌟</h1>
+    <button onclick="showMessage()">Voir le message</button>
+    <div id="message">
+      <p>Mon cœur, je suis vraiment désolé de m’être endormi hier soir sans t’appeler...</p>
+      <p>Je comprends que tu aies pu être blessée, et ce n’est vraiment pas ce que je voulais. Tu comptes énormément pour moi, et j’espère que tu me pardonneras. 💖</p>
+      <p>Je veux me rattraper, passer du temps avec toi, et te montrer chaque jour à quel point tu es précieuse pour moi. 🌹</p>
+      <p>Je t’aime fort. 💌</p>
+    </div>
+  </div>
+  <script>
+    function showMessage() {
+      const msg = document.getElementById("message");
+      msg.classList.add("visible");
+    }
+  </script>
+</body>
+</html>
